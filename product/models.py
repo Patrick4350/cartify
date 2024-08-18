@@ -1,5 +1,5 @@
 from io import BytesIO
-from PIL import Image
+from PIL import Image, ImageOps
 
 from django.core.files import File
 from django.db import models
@@ -55,13 +55,15 @@ class Product(models.Model):
                 return ""
             
         
-    def make_thumbnail(self, image, size=(300, 200)):
+    def make_thumbnail(self, image, size=(300, 300)):
         img = Image.open(image)
-        img.convert('RGB')
+        img.convert('RGB')    
+        img = ImageOps.fit(img, size, Image.LANCZOS)
+
         img.thumbnail(size)
 
         thumb_io = BytesIO()
-        img.save(thumb_io, 'JPEG', quality=85)
+        img.save(thumb_io, 'JPEG', quality=95)
 
         thumbnail = File(thumb_io, name=image.name)
 
