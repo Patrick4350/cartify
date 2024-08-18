@@ -3,7 +3,7 @@
         <div class="columns is-multiline">
             <div class="column is-9">
                 <figure class="image mb-6">
-                    <img v-bind:src="product.get_image">
+                    <img v-bind:src="product.get_image" style="width: 500px; height: 800px;">
                 </figure>
 
                 <h1 class="title"> {{ product.name }} </h1>
@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="control">
-                        <a class="button is-dark"> Add to cart </a>
+                        <a class="button is-dark" @click="addToCart"> Add to cart </a>
                     </div>
                 </div>
             </div>
@@ -30,12 +30,15 @@
 
 <script>
 import axios from 'axios'
+import { toast } from 'bulma-toast'
 
 export default {
     name: 'Product',
     data() {
         return {
-            product: {},
+            product: {
+              
+            },
             quantity: 1
         }
     },
@@ -56,6 +59,27 @@ export default {
                 console.log(error)
             })
 
+        },
+        addToCart() {
+            if (isNaN(this.quantity) || this.quantity < 1) {
+                this.quantity = 1
+            }
+
+            const item = {
+                product: this.product,
+                quantity: this.quantity
+            }
+
+            this.$store.commit('addToCart', item)
+
+            toast({
+                message: `Great choice! ${this.product.name} is now in your cart.`,
+                type: 'is-success',
+                dismissible: true,
+                pauseOnHover: true,
+                duration: 2000,
+                position: 'bottom-right',
+            })
         }
     }
 }
