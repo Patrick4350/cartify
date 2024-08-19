@@ -118,6 +118,7 @@
 
 <script>
 import axios from 'axios'
+
     export default {
         name: 'Checkout',
         data () {
@@ -141,6 +142,15 @@ import axios from 'axios'
             document.title = 'Checkout | Cartify'
             
             this.cart = this.$store.state.cart
+
+            if (this.cartTotalLength > 0) {
+                this.stripe = Stripe(process.env.STRIPE_TEST_PUBLISHABLE_KEY);
+                const elements = this.stripe.elements()
+                this.card = elements.create('card', { hidePostalCode: true })
+
+                this.card.mount('#card-element')
+            }
+
         }, 
         methods: {
             getItemTotal(item) {
@@ -219,7 +229,7 @@ import axios from 'axios'
                 'items': items,
                 'stripe_token': token.id
             }
-
+    
             await axios
                 .post('/api/v1/checkout/', data)
                 .then(response => {
