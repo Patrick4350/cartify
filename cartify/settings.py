@@ -28,6 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+STRIPE_SECRET_KEY = 'sk_test_51PpJBXCNq1b5y3IHYd9NZ1Yud1HvwzzoeFADpFGRbyCf3MIo4YvUhw2mLrOsRqSZKuXG6vIxKySwbSygFO8L6vci00sSb8WoTV'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
     'djoser',
 
     'product',
+    'order',
 ]
 
 MIDDLEWARE = [
