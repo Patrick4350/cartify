@@ -144,7 +144,7 @@ import axios from 'axios'
             this.cart = this.$store.state.cart
 
             if (this.cartTotalLength > 0) {
-                this.stripe = Stripe(process.env.STRIPE_TEST_PUBLISHABLE_KEY);
+                this.stripe = Stripe('pk_test_51PpJBXCNq1b5y3IH9OwDQOJdnOcKluA3nA2oq40IDyaYnm0SjQgK5Yz45lkOkwmk1ZWBetztVKRXwxXb4jg7LfHu00zGqMuU9t')
                 const elements = this.stripe.elements()
                 this.card = elements.create('card', { hidePostalCode: true })
 

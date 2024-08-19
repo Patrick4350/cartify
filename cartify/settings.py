@@ -18,8 +18,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-STRIPE_SECRET_KEY = 'STRIPE_TEST_SECRET_KEY = config('STRIPE_TEST_SECRET_KEY')
-'
+STRIPE_SECRET_KEY = config('STRIPE_TEST_SECRET_KEY')
+
 
 # Application definition
 
