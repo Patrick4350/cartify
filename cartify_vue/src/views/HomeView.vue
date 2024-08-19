@@ -6,7 +6,7 @@
           Welcome to Cartify
         </p>
         <p class="subtitle">
-          Elevate Your Outerwear Game—Discover Jackets That Impress!        
+          Elevate Your Outerwear Game—Discover Clothing That Impress!        
         </p>
       </div>
     </section>

@@ -64,6 +64,7 @@
 
     <footer class="footer">
       <p class="has-text-centered"> Copyright © 2024 </p>
+      <p class="has-text-centered">Created with ❤️ by Patrick Bofah</p>
     </footer>
 
   </div>
