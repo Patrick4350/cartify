@@ -115,4 +115,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any inquiries or support, you can contact (me)[pbofah1@gmail.com].
+For any inquiries or support, you can contact [me](pbofah1@gmail.com).
