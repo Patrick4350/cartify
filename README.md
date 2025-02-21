@@ -32,7 +32,7 @@ To get started with Cartify locally, follow these steps:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/cartify.git
+   git clone https://github.com/Patrick4350/cartify.git
    cd cartify
    ```
 
